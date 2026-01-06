@@ -41,3 +41,7 @@ MainPage: Ana sayfa, vücut haritası ve etkileşim mantığı.
 AntrenmanListesiPage: Seçilen bölgeye göre videoları filtreleyen ve oynatan sayfa.
 
 FavorilerPage: Kullanıcının kaydettiği favori hareketleri listeleyen sayfa.
+
+
+
+Geliştirici: HARUN BATUR
