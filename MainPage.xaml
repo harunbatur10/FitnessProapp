@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Fitnessapp.MainPage"
+             BackgroundColor="Black"
+             Shell.NavBarIsVisible="False"
+             NavigationPage.HasNavigationBar="False">
+
+    <Grid RowDefinitions="Auto, *">
+
+        <Border Grid.Row="0"
+                BackgroundColor="#1A1A1A"
+                StrokeThickness="0"
+                Padding="20,15"
+                Margin="0,0,0,0" 
+                Shadow="{Shadow Brush=Black, Offset='0,5', Opacity=0.5, Radius=10}"
+                ZIndex="99">
+            <Grid ColumnDefinitions="*, Auto">
+                <HorizontalStackLayout Grid.Column="0" Spacing="10" VerticalOptions="Center">
+                    <Label Text="🏋️" FontSize="26" VerticalOptions="Center"/>
+                    <VerticalStackLayout Spacing="-5" VerticalOptions="Center">
+                        <Label Text="FITNESS" TextColor="White" FontSize="14" FontAttributes="Bold" CharacterSpacing="2"/>
+                        <Label Text="PRO" TextColor="#FFD700" FontSize="20" FontAttributes="Bold" CharacterSpacing="1"/>
+                    </VerticalStackLayout>
+                </HorizontalStackLayout>
+
+                <Border Grid.Column="1" 
+                        Stroke="White" StrokeThickness="1" 
+                        BackgroundColor="#222"
+                        HeightRequest="40" 
+                        Padding="12,0"
+                        StrokeShape="RoundRectangle 20"
+                        VerticalOptions="Center">
+                    <HorizontalStackLayout Spacing="5" VerticalOptions="Center">
+                        <Label Text="❤️" FontSize="16" VerticalOptions="Center"/>
+                        <Label Text="Favorilerim" TextColor="White" FontSize="12" FontAttributes="Bold" VerticalOptions="Center"/>
+                    </HorizontalStackLayout>
+                    <Border.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="FavorilerimSayfasiniAc"/>
+                    </Border.GestureRecognizers>
+                </Border>
+            </Grid>
+        </Border>
+
+        <Grid Grid.Row="1" BackgroundColor="Black">
+
+            <AbsoluteLayout x:Name="MaleLayout"
+                            HorizontalOptions="FillAndExpand"
+                            VerticalOptions="FillAndExpand"
+                            BackgroundColor="Black"
+                            IsVisible="True">
+
+                <Image x:Name="ImgErkek" Source="erkek_on.png" Aspect="Fill"
+                       AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" />
+
+                <Button x:Name="BtnErkekGogus" Clicked="GogusTiklandi" BackgroundColor="#FF0000" Opacity="0" CornerRadius="10" AbsoluteLayout.LayoutBounds="0.5, 0.24, 0.20, 0.07" AbsoluteLayout.LayoutFlags="All" />
+                <Button x:Name="BtnErkekKarin" Clicked="KarinTiklandi" BackgroundColor="#00FF00" Opacity="0" CornerRadius="10" AbsoluteLayout.LayoutBounds="0.5, 0.35, 0.20, 0.12" AbsoluteLayout.LayoutFlags="All" />
+                <Button x:Name="BtnErkekSolOmuz" Clicked="OmuzTiklandi" BackgroundColor="#FFA500" Opacity="0" CornerRadius="10" AbsoluteLayout.LayoutBounds="0.43, 0.20, 0.09, 0.03" AbsoluteLayout.LayoutFlags="All" />
+                <Button x:Name="BtnErkekSagOmuz" Clicked="OmuzTiklandi" BackgroundColor="#FFA500" Opacity="0" CornerRadius="10" AbsoluteLayout.LayoutBounds="0.56, 0.20, 0.09, 0.03" AbsoluteLayout.LayoutFlags="All" />
+                <Button x:Name="BtnErkekSagPazu" Clicked="PazuTiklandi" BackgroundColor="#00FFFF" Opacity="0" CornerRadius="10" AbsoluteLayout.LayoutBounds="0.36, 0.27, 0.06, 0.13" AbsoluteLayout.LayoutFlags="All" />
+                <Button x:Name="BtnErkekSolPazu" Clicked="PazuTiklandi" BackgroundColor="#00FFFF" Opacity="0" CornerRadius="10" AbsoluteLayout.LayoutBounds="0.65, 0.26, 0.06, 0.13" AbsoluteLayout.LayoutFlags="All" />
+                <Button x:Name="BtnErkekSagOnKol" Clicked="OnKolOnTiklandi" BackgroundColor="#008080" Opacity="0" CornerRadius="8" AbsoluteLayout.LayoutBounds="0.32, 0.4, 0.07, 0.11" AbsoluteLayout.LayoutFlags="All" />
+                <Button x:Name="BtnErkekSolOnKol" Clicked="OnKolOnTiklandi" BackgroundColor="#008080" Opacity="0" CornerRadius="8" AbsoluteLayout.LayoutBounds="0.68, 0.4, 0.07, 0.11" AbsoluteLayout.LayoutFlags="All" />
+                <Button x:Name="BtnErkekSolUstBacak" Clicked="OnBacakTiklandi" BackgroundColor="#0000FF" Opacity="0" CornerRadius="10" AbsoluteLayout.LayoutBounds="0.42, 0.54, 0.11, 0.16" AbsoluteLayout.LayoutFlags="All" />
+                <Button x:Name="BtnErkekSagUstBacak" Clicked="OnBacakTiklandi" BackgroundColor="#0000FF" Opacity="0" CornerRadius="10" AbsoluteLayout.LayoutBounds="0.58, 0.54, 0.11, 0.16" AbsoluteLayout.LayoutFlags="All" />
+                <Button x:Name="BtnErkekSolAltBacak" Clicked="AltBacakOnTiklandi" BackgroundColor="#00008B" Opacity="0" CornerRadius="10" AbsoluteLayout.LayoutBounds="0.43, 0.76, 0.09, 0.13" AbsoluteLayout.LayoutFlags="All" />
+                <Button x:Name="BtnErkekSagAltBacak" Clicked="AltBacakOnTiklandi" BackgroundColor="#00008B" Opacity="0" CornerRadius="10" AbsoluteLayout.LayoutBounds="0.57, 0.75, 0.09, 0.13" AbsoluteLayout.LayoutFlags="All" />
+
+                <Button x:Name="BtnErkekSirt" Clicked="SirtTiklandi" BackgroundColor="#FFFF00" Opacity="0" CornerRadius="10" IsVisible="False" AbsoluteLayout.LayoutBounds="0.5, 0.27, 0.21, 0.14" AbsoluteLayout.LayoutFlags="All" />
+                <Button x:Name="BtnErkekSolArkaOmuz" Clicked="OmuzTiklandi" BackgroundColor="#FFA500" Opacity="0" CornerRadius="10" IsVisible="False" AbsoluteLayout.LayoutBounds="0.45, 0.19, 0.09, 0.03" AbsoluteLayout.LayoutFlags="All" />
+                <Button x:Name="BtnErkekSagArkaOmuz" Clicked="OmuzTiklandi" BackgroundColor="#FFA500" Opacity="0" CornerRadius="10" IsVisible="False" AbsoluteLayout.LayoutBounds="0.54, 0.19, 0.09, 0.03" AbsoluteLayout.LayoutFlags="All" />
+                <Button x:Name="BtnErkekKalca" Clicked="KalcaTiklandi" BackgroundColor="#800080" Opacity="0" CornerRadius="10" IsVisible="False" AbsoluteLayout.LayoutBounds="0.5, 0.44, 0.21, 0.09" AbsoluteLayout.LayoutFlags="All" />
+                <Button x:Name="BtnErkekSagArkaKol" Clicked="ArkaKolTiklandi" BackgroundColor="#FF69B4" Opacity="0" CornerRadius="10" IsVisible="False" AbsoluteLayout.LayoutBounds="0.34, 0.26, 0.07, 0.12" AbsoluteLayout.LayoutFlags="All" />
+                <Button x:Name="BtnErkekSolArkaKol" Clicked="ArkaKolTiklandi" BackgroundColor="#FF69B4" Opacity="0" CornerRadius="10" IsVisible="False" AbsoluteLayout.LayoutBounds="0.66, 0.26, 0.07, 0.12" AbsoluteLayout.LayoutFlags="All" />
+                <Button x:Name="BtnErkekSagOnKolArka" Clicked="OnKolArkaTiklandi" BackgroundColor="#C71585" Opacity="0" CornerRadius="8" IsVisible="False" AbsoluteLayout.LayoutBounds="0.31, 0.4, 0.07, 0.11" AbsoluteLayout.LayoutFlags="All" />
+                <Button x:Name="BtnErkekSolOnKolArka" Clicked="OnKolArkaTiklandi" BackgroundColor="#C71585" Opacity="0" CornerRadius="8" IsVisible="False" AbsoluteLayout.LayoutBounds="0.68, 0.40, 0.06, 0.12" AbsoluteLayout.LayoutFlags="All" />
+                <Button x:Name="BtnErkekSolArkaUstBacak" Clicked="ArkaUstBacakTiklandi" BackgroundColor="#FF00FF" Opacity="0" CornerRadius="10" IsVisible="False" AbsoluteLayout.LayoutBounds="0.42, 0.56, 0.11, 0.12" AbsoluteLayout.LayoutFlags="All" />
+                <Button x:Name="BtnErkekSagArkaUstBacak" Clicked="ArkaUstBacakTiklandi" BackgroundColor="#FF00FF" Opacity="0" CornerRadius="10" IsVisible="False" AbsoluteLayout.LayoutBounds="0.58, 0.56, 0.11, 0.12" AbsoluteLayout.LayoutFlags="All" />
+                <Button x:Name="BtnErkekSolAltBacakArka" Clicked="AltBacakArkaTiklandi" BackgroundColor="#4B0082" Opacity="0" CornerRadius="10" IsVisible="False" AbsoluteLayout.LayoutBounds="0.42, 0.69, 0.09, 0.09" AbsoluteLayout.LayoutFlags="All" />
+                <Button x:Name="BtnErkekSagAltBacakArka" Clicked="AltBacakArkaTiklandi" BackgroundColor="#4B0082" Opacity="0" CornerRadius="10" IsVisible="False" AbsoluteLayout.LayoutBounds="0.59, 0.69, 0.09, 0.09" AbsoluteLayout.LayoutFlags="All" />
+
+                <VerticalStackLayout AbsoluteLayout.LayoutBounds="0.95, 0.05, -1, -1" 
+                                     AbsoluteLayout.LayoutFlags="PositionProportional" 
+                                     Spacing="12">
+                    <Border x:Name="MaleBorderErkek" Stroke="White" StrokeThickness="2" BackgroundColor="#1A1A1A" HeightRequest="46" WidthRequest="46" StrokeShape="RoundRectangle 23">
+                        <Label Text="♂" TextColor="White" FontSize="24" HorizontalOptions="Center" VerticalOptions="Center"/>
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="CinsiyetDegistir" CommandParameter="erkek"/>
+                        </Border.GestureRecognizers>
+                    </Border>
+                    <Border x:Name="MaleBorderKadin" Stroke="White" StrokeThickness="2" BackgroundColor="#80000000" HeightRequest="46" WidthRequest="46" StrokeShape="RoundRectangle 23">
+                        <Label Text="♀" TextColor="White" FontSize="24" HorizontalOptions="Center" VerticalOptions="Center"/>
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="CinsiyetDegistir" CommandParameter="kadin"/>
+                        </Border.GestureRecognizers>
+                    </Border>
+                    <Border Stroke="White" StrokeThickness="2" BackgroundColor="#80000000" HeightRequest="46" WidthRequest="46" StrokeShape="RoundRectangle 23">
+                        <Label Text="↻" TextColor="White" FontSize="26" HorizontalOptions="Center" VerticalOptions="Center" TranslationY="-2"/>
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="YonDegistir"/>
+                        </Border.GestureRecognizers>
+                    </Border>
+                </VerticalStackLayout>
+            </AbsoluteLayout>
+
+            <AbsoluteLayout x:Name="FemaleLayout"
+                            HorizontalOptions="FillAndExpand"
+                            VerticalOptions="FillAndExpand"
+                            BackgroundColor="Black"
+                            IsVisible="False">
+
+                <Image x:Name="ImgKadin" Source="kadin_on.png" Aspect="Fill"
+                       AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" />
+
+                <Button x:Name="BtnKadinGogus" Clicked="GogusTiklandi" BackgroundColor="#FF0000" Opacity="0" CornerRadius="10" AbsoluteLayout.LayoutBounds="0.5, 0.25, 0.18, 0.06" AbsoluteLayout.LayoutFlags="All" />
+                <Button x:Name="BtnKadinKarin" Clicked="KarinTiklandi" BackgroundColor="#00FF00" Opacity="0" CornerRadius="10" AbsoluteLayout.LayoutBounds="0.5, 0.34, 0.18, 0.12" AbsoluteLayout.LayoutFlags="All" />
+                <Button x:Name="BtnKadinSolOmuz" Clicked="OmuzTiklandi" BackgroundColor="#FFA500" Opacity="0" CornerRadius="10" AbsoluteLayout.LayoutBounds="0.44, 0.20, 0.08, 0.03" AbsoluteLayout.LayoutFlags="All" />
+                <Button x:Name="BtnKadinSagOmuz" Clicked="OmuzTiklandi" BackgroundColor="#FFA500" Opacity="0" CornerRadius="10" AbsoluteLayout.LayoutBounds="0.56, 0.2, 0.08, 0.03" AbsoluteLayout.LayoutFlags="All" />
+                <Button x:Name="BtnKadinSagPazu" Clicked="PazuTiklandi" BackgroundColor="#00FFFF" Opacity="0" CornerRadius="10" AbsoluteLayout.LayoutBounds="0.37, 0.26, 0.05, 0.13" AbsoluteLayout.LayoutFlags="All" />
+                <Button x:Name="BtnKadinSolPazu" Clicked="PazuTiklandi" BackgroundColor="#00FFFF" Opacity="0" CornerRadius="10" AbsoluteLayout.LayoutBounds="0.63, 0.26, 0.05, 0.13" AbsoluteLayout.LayoutFlags="All" />
+                <Button x:Name="BtnKadinSagOnKol" Clicked="OnKolOnTiklandi" BackgroundColor="#008080" Opacity="0" CornerRadius="8" AbsoluteLayout.LayoutBounds="0.33, 0.39, 0.06, 0.09" AbsoluteLayout.LayoutFlags="All" />
+                <Button x:Name="BtnKadinSolOnKol" Clicked="OnKolOnTiklandi" BackgroundColor="#008080" Opacity="0" CornerRadius="8" AbsoluteLayout.LayoutBounds="0.67, 0.39, 0.06, 0.08" AbsoluteLayout.LayoutFlags="All" />
+                <Button x:Name="BtnKadinSolUstBacak" Clicked="OnBacakTiklandi" BackgroundColor="#0000FF" Opacity="0" CornerRadius="10" AbsoluteLayout.LayoutBounds="0.43, 0.53, 0.1, 0.16" AbsoluteLayout.LayoutFlags="All" />
+                <Button x:Name="BtnKadinSagUstBacak" Clicked="OnBacakTiklandi" BackgroundColor="#0000FF" Opacity="0" CornerRadius="10" AbsoluteLayout.LayoutBounds="0.57, 0.53, 0.1, 0.16" AbsoluteLayout.LayoutFlags="All" />
+                <Button x:Name="BtnKadinSolAltBacak" Clicked="AltBacakOnTiklandi" BackgroundColor="#00008B" Opacity="0" CornerRadius="10" AbsoluteLayout.LayoutBounds="0.44, 0.74, 0.07, 0.11" AbsoluteLayout.LayoutFlags="All" />
+                <Button x:Name="BtnKadinSagAltBacak" Clicked="AltBacakOnTiklandi" BackgroundColor="#00008B" Opacity="0" CornerRadius="10" AbsoluteLayout.LayoutBounds="0.56, 0.74, 0.08, 0.11" AbsoluteLayout.LayoutFlags="All" />
+
+                <Button x:Name="BtnKadinSirt" Clicked="SirtTiklandi" BackgroundColor="#FFFF00" Opacity="0" CornerRadius="10" IsVisible="False" AbsoluteLayout.LayoutBounds="0.5, 0.25, 0.17, 0.13" AbsoluteLayout.LayoutFlags="All" />
+                <Button x:Name="BtnKadinSolArkaOmuz" Clicked="OmuzTiklandi" BackgroundColor="#FFA500" Opacity="0" CornerRadius="10" IsVisible="False" AbsoluteLayout.LayoutBounds="0.45, 0.17, 0.07, 0.04" AbsoluteLayout.LayoutFlags="All" />
+                <Button x:Name="BtnKadinSagArkaOmuz" Clicked="OmuzTiklandi" BackgroundColor="#FFA500" Opacity="0" CornerRadius="10" IsVisible="False" AbsoluteLayout.LayoutBounds="0.54, 0.17, 0.07, 0.04" AbsoluteLayout.LayoutFlags="All" />
+                <Button x:Name="BtnKadinKalca" Clicked="KalcaTiklandi" BackgroundColor="#800080" Opacity="0" CornerRadius="10" IsVisible="False" AbsoluteLayout.LayoutBounds="0.5, 0.41, 0.21, 0.09" AbsoluteLayout.LayoutFlags="All" />
+                <Button x:Name="BtnKadinSagArkaKol" Clicked="ArkaKolTiklandi" BackgroundColor="#FF69B4" Opacity="0" CornerRadius="10" IsVisible="False" AbsoluteLayout.LayoutBounds="0.37, 0.24, 0.05, 0.12" AbsoluteLayout.LayoutFlags="All" />
+                <Button x:Name="BtnKadinSolArkaKol" Clicked="ArkaKolTiklandi" BackgroundColor="#FF69B4" Opacity="0" CornerRadius="10" IsVisible="False" AbsoluteLayout.LayoutBounds="0.63, 0.24, 0.05, 0.12" AbsoluteLayout.LayoutFlags="All" />
+                <Button x:Name="BtnKadinSagOnKolArka" Clicked="OnKolArkaTiklandi" BackgroundColor="#C71585" Opacity="0" CornerRadius="8" IsVisible="False" AbsoluteLayout.LayoutBounds="0.33, 0.37, 0.06, 0.1" AbsoluteLayout.LayoutFlags="All" />
+                <Button x:Name="BtnKadinSolOnKolArka" Clicked="OnKolArkaTiklandi" BackgroundColor="#C71585" Opacity="0" CornerRadius="8" IsVisible="False" AbsoluteLayout.LayoutBounds="0.67, 0.38, 0.06, 0.1" AbsoluteLayout.LayoutFlags="All" />
+                <Button x:Name="BtnKadinSolArkaUstBacak" Clicked="ArkaUstBacakTiklandi" BackgroundColor="#FF00FF" Opacity="0" CornerRadius="10" IsVisible="False" AbsoluteLayout.LayoutBounds="0.43, 0.54, 0.11, 0.12" AbsoluteLayout.LayoutFlags="All" />
+                <Button x:Name="BtnKadinSagArkaUstBacak" Clicked="ArkaUstBacakTiklandi" BackgroundColor="#FF00FF" Opacity="0" CornerRadius="10" IsVisible="False" AbsoluteLayout.LayoutBounds="0.57, 0.54, 0.11, 0.12" AbsoluteLayout.LayoutFlags="All" />
+                <Button x:Name="BtnKadinSolAltBacakArka" Clicked="AltBacakArkaTiklandi" BackgroundColor="#4B0082" Opacity="0" CornerRadius="10" IsVisible="False" AbsoluteLayout.LayoutBounds="0.44, 0.68, 0.07, 0.09" AbsoluteLayout.LayoutFlags="All" />
+                <Button x:Name="BtnKadinSagAltBacakArka" Clicked="AltBacakArkaTiklandi" BackgroundColor="#4B0082" Opacity="0" CornerRadius="10" IsVisible="False" AbsoluteLayout.LayoutBounds="0.56, 0.68, 0.07, 0.09" AbsoluteLayout.LayoutFlags="All" />
+
+                <VerticalStackLayout AbsoluteLayout.LayoutBounds="0.95, 0.05, -1, -1" 
+                                     AbsoluteLayout.LayoutFlags="PositionProportional" 
+                                     Spacing="12">
+                    <Border x:Name="FemaleBorderErkek" Stroke="White" StrokeThickness="2" BackgroundColor="#80000000" HeightRequest="46" WidthRequest="46" StrokeShape="RoundRectangle 23">
+                        <Label Text="♂" TextColor="White" FontSize="24" HorizontalOptions="Center" VerticalOptions="Center"/>
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="CinsiyetDegistir" CommandParameter="erkek"/>
+                        </Border.GestureRecognizers>
+                    </Border>
+                    <Border x:Name="FemaleBorderKadin" Stroke="White" StrokeThickness="2" BackgroundColor="#1A1A1A" HeightRequest="46" WidthRequest="46" StrokeShape="RoundRectangle 23">
+                        <Label Text="♀" TextColor="White" FontSize="24" HorizontalOptions="Center" VerticalOptions="Center"/>
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="CinsiyetDegistir" CommandParameter="kadin"/>
+                        </Border.GestureRecognizers>
+                    </Border>
+                    <Border Stroke="White" StrokeThickness="2" BackgroundColor="#80000000" HeightRequest="46" WidthRequest="46" StrokeShape="RoundRectangle 23">
+                        <Label Text="↻" TextColor="White" FontSize="26" HorizontalOptions="Center" VerticalOptions="Center" TranslationY="-2"/>
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="YonDegistir"/>
+                        </Border.GestureRecognizers>
+                    </Border>
+                </VerticalStackLayout>
+            </AbsoluteLayout>
+
+        </Grid>
+    </Grid>
+</ContentPage>

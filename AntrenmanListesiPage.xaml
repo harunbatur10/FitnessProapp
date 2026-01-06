@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:Class="Fitnessapp.AntrenmanListesiPage"
+             BackgroundColor="Black"
+             Shell.NavBarIsVisible="False"
+             NavigationPage.HasNavigationBar="False">
+
+    <Grid RowDefinitions="Auto, *">
+
+        <Border Grid.Row="0"
+                BackgroundColor="#1A1A1A"
+                StrokeThickness="0"
+                Padding="15,10"
+                Shadow="{Shadow Brush=Black, Offset='0,5', Opacity=0.5, Radius=10}"
+                ZIndex="99">
+            <Grid ColumnDefinitions="Auto, *">
+                <Border Grid.Column="0" 
+                        BackgroundColor="Transparent" 
+                        Stroke="White" StrokeThickness="1" 
+                        HeightRequest="36" WidthRequest="36" 
+                        StrokeShape="RoundRectangle 18"
+                        VerticalOptions="Center">
+                    <Label Text="←" TextColor="White" FontSize="24" HorizontalOptions="Center" VerticalOptions="Center" TranslationY="-2"/>
+                    <Border.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="KapatButonu_Clicked"/>
+                    </Border.GestureRecognizers>
+                </Border>
+
+                <Label x:Name="lblBaslik"
+                       Grid.Column="1"
+                       Text="ANTRENMAN" 
+                       TextColor="White"
+                       FontSize="20"
+                       FontAttributes="Bold"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"
+                       Margin="-36,0,0,0"/>
+            </Grid>
+        </Border>
+
+        <CarouselView Grid.Row="1" 
+                      x:Name="cvHareketler"
+                      Loop="False"
+                      VerticalScrollBarVisibility="Never">
+            <CarouselView.ItemsLayout>
+                <LinearItemsLayout Orientation="Vertical" 
+                                   SnapPointsType="MandatorySingle" 
+                                   SnapPointsAlignment="Center"/>
+            </CarouselView.ItemsLayout>
+
+            <CarouselView.ItemTemplate>
+                <DataTemplate>
+                    <Border StrokeThickness="0" BackgroundColor="Black">
+                        <Grid RowDefinitions="*, Auto">
+
+                            <Grid Grid.Row="0">
+                                <toolkit:MediaElement Source="{Binding LocalFilePath}"
+                                                      ShouldShowPlaybackControls="False"
+                                                      Aspect="AspectFill"
+                                                      VerticalOptions="FillAndExpand"
+                                                      HorizontalOptions="FillAndExpand"
+                                                      Loaded="Video_Yuklendi"/>
+
+                                <Label Text="▶" FontSize="60" TextColor="White" Opacity="0.6" IsVisible="False"
+                                       HorizontalOptions="Center" VerticalOptions="Center" InputTransparent="True"/>
+
+                                <VerticalStackLayout HorizontalOptions="End" 
+                                                     VerticalOptions="End" 
+                                                     Spacing="25" 
+                                                     Margin="0,0,10,20">
+                                    <Label Text="{Binding FavoriteIcon}" 
+                                           TextColor="{Binding FavoriteColor}"
+                                           FontSize="35" 
+                                           HorizontalOptions="Center">
+                                        <Label.Shadow>
+                                            <Shadow Brush="Black" Offset="0,2" Opacity="0.8" Radius="5"/>
+                                        </Label.Shadow>
+                                        <Label.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="FavoriButonu_Clicked"/>
+                                        </Label.GestureRecognizers>
+                                    </Label>
+
+                                    <Label Text="📤" 
+                                           TextColor="White"
+                                           FontSize="35" 
+                                           HorizontalOptions="Center">
+                                        <Label.Shadow>
+                                            <Shadow Brush="Black" Offset="0,2" Opacity="0.8" Radius="5"/>
+                                        </Label.Shadow>
+                                        <Label.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="PaylasButonu_Clicked"/>
+                                        </Label.GestureRecognizers>
+                                    </Label>
+                                </VerticalStackLayout>
+                            </Grid>
+
+                            <Grid Grid.Row="1" 
+                                  BackgroundColor="#CC000000" 
+                                  Padding="20,15">
+
+                                <VerticalStackLayout Spacing="3">
+                                    <Label Text="{Binding Category}" TextColor="#FFD700" FontSize="14" FontAttributes="Bold"/>
+                                    <Label Text="{Binding Name}" TextColor="White" FontSize="22" FontAttributes="Bold" LineBreakMode="TailTruncation"/>
+                                </VerticalStackLayout>
+                            </Grid>
+
+                        </Grid>
+
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="Video_Tapped"/>
+                        </Border.GestureRecognizers>
+                    </Border>
+                </DataTemplate>
+            </CarouselView.ItemTemplate>
+        </CarouselView>
+
+    </Grid>
+</ContentPage>
