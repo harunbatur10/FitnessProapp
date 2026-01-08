@@ -5,6 +5,7 @@ Fitness Pro, kullanıcıların vücut anatomisi üzerinden interaktif seçim yap
 Bu proje, sporcuların (başlangıç veya ileri seviye) hedefledikleri kas grubuna yönelik hareketleri en doğru formda öğrenmelerini sağlamak amacıyla geliştirilmiştir. "TikTok/Reels" tarzı kaydırmalı video arayüzü ile modern bir kullanıcı deneyimi sunar.
 
 🚀 Öne Çıkan Özellikler
+
 İnteraktif Vücut Haritası: Kullanıcılar ekrandaki vücut modeline (Örn: Göğüs, Omuz, Bacak) dokunarak ilgili antrenman listesine gider.
 
 Cinsiyet Seçimi: Erkek ve Kadın anatomisine uygun özelleştirilmiş antrenman içerikleri.
